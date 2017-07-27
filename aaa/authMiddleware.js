@@ -2,7 +2,7 @@
 
 let tokenUtil = require('../api/utils/tokenUtil');
 
-function validate(req, res, next) {
+exports.validate = function(req, res, next) {
 
     let token = tokenUtil.getTokenFromHeaders(req);
 
@@ -17,8 +17,4 @@ function validate(req, res, next) {
         next();
 
     });
-}
-
-module.exports = {
-    validate: validate
 };

@@ -9,7 +9,7 @@ exports.generate = function(data, callback) {
     try {
         callback(null, jwt.sign(data, key, { algorithm: 'RS256'}));
     } catch (err) {
-        console.log(err);
+        console.log('WARN - ', err.message);
         callback(err, null);
     }
 };
@@ -18,7 +18,7 @@ exports.validate = function(token, callback) {
     try {
         callback(null, jwt.verify(token, cert, { algorithms: ['RS256']}));
     } catch (err) {
-        console.log(null);
+        console.log('WARN - ', err.message);
         callback(err, null);
     }
 };

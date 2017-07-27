@@ -11,7 +11,7 @@ let User = require('./api/models/userModel');
 
 // database
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://192.168.99.100:32768/bbbaaa', { useMongoClient: true });
+mongoose.connect('mongodb://192.168.99.100:32769/bbbaaa', { useMongoClient: true });
 
 // routes
 let userRoutes = require('./api/routes/userRoute'),
@@ -29,6 +29,12 @@ app.use('/v1', authRoutes);
 app.use('/v1', userRoutes);
 
 // error handling
+app.use(function(req, res, next) {
+    let err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
+
 app.use(errorHandler.handleErrors);
 
 module.exports = app;
