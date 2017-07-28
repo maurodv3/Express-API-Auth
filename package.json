@@ -13,6 +13,7 @@
     "cors": "^2.8.4",
     "debug": "~2.6.3",
     "express": "~4.15.2",
+    "express-jwt-permissions": "^1.0.0",
     "jsonwebtoken": "^7.4.1",
     "mongoose": "^4.11.3",
     "mongoose-paginate": "^5.0.3",

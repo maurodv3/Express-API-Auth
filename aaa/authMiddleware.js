@@ -14,6 +14,11 @@ exports.validate = function(req, res, next) {
             return;
         }
 
+        req.identity = {
+            username: decoded.user,
+            role: decoded.role
+        };
+
         next();
 
     });

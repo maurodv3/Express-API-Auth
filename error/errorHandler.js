@@ -2,15 +2,15 @@
 
 exports.handleErrors = function(err, req, res, next) {
 
-    // catch unauthorized
-    if (err.name === 'UnauthorizedError') {
-        res.status(401).json({ message: 'Provided invalid token.' });
+    //catch permission denied
+    if (err.code === 'permission_denied') {
+        res.status(403).json({ message: 'Insufficient permissions.' });
         return;
     }
 
-    //catch permission denied
-    if (err.code === 'permission_denied') {
-        res.status(401).json({ message: 'Insufficient permissions.' });
+    // catch unauthorized
+    if (err.name === 'UnauthorizedError') {
+        res.status(401).json({ message: 'Provided invalid token.' });
         return;
     }
 
