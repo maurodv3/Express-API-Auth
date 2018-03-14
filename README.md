@@ -3,7 +3,7 @@
 Created with express-generator.
 
 Using: <br>
-  Morgan (logging)
-  Mongoose (data persistence)
-  Jsonwebtoken (authorization token)
-  Express-jwt-permissions (authorizing endpoints)
+  Morgan (logging) <br>
+  Mongoose (data persistence) <br>
+  Jsonwebtoken (authorization token) <br>
+  Express-jwt-permissions (authorizing endpoints) <br>
